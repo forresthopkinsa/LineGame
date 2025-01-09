@@ -37,6 +37,11 @@ application {
     mainClass = "LineGameSwing"
 }
 
+tasks.jar {
+    // set the generated jar main class to the same as the application main class configured above
+    manifest.attributes["Main-Class"] = application.mainClass
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
